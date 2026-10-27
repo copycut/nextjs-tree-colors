@@ -1,0 +1,56 @@
+{
+  "name": "nextjs-tree-colors",
+  "displayName": "NextJs Tree Colors",
+  "description": "Colors the file tree by Next.js file type: server/client components, server actions, API routes, workspace packages",
+  "version": "0.1.0",
+  "publisher": "copycut",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "colors": [
+      {
+        "id": "nextjsTreeColors.serverComponent",
+        "description": "Server component",
+        "defaults": { "dark": "#569cd6", "light": "#1a73c7", "highContrast": "#75beff" }
+      },
+      {
+        "id": "nextjsTreeColors.clientComponent",
+        "description": "Client component ('use client')",
+        "defaults": { "dark": "#f5a623", "light": "#b36b00", "highContrast": "#ffcc66" }
+      },
+      {
+        "id": "nextjsTreeColors.serverAction",
+        "description": "Server action ('use server' or actions/ folder)",
+        "defaults": { "dark": "#c586ea", "light": "#9b4fc2", "highContrast": "#e0b3ff" }
+      },
+      {
+        "id": "nextjsTreeColors.apiRoute",
+        "description": "API route (route.ts)",
+        "defaults": { "dark": "#4ec9b0", "light": "#2a8f78", "highContrast": "#80e8cf" }
+      },
+      {
+        "id": "nextjsTreeColors.workspacePackage",
+        "description": "Workspace package (packages/*)",
+        "defaults": { "dark": "#969696", "light": "#6e6e6e", "highContrast": "#bfbfbf" }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.6.0"
+  }
+}
